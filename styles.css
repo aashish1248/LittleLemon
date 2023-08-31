@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+body {
+    background-color: #F7FFE5;
+}
+header {
+    padding-top: 2rem;
+    width: 100%;
+    height: 7rem;
+    text-align: center;
+    background-color: #A0C49D;
+}
+img:nth-child(1) {
+    width: 20rem;
+    height: 5rem;
+}
+ul {
+    width: 100%;
+    height: 3rem;
+    background-color: #E1EEDD;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+a:link, a:visited {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+a[href="#"] {
+    color: #A0C49D;
+}
+a:hover {
+    color: rgb(203, 94, 94);
+}
+main {
+    display: grid;
+    width: 100%;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: 'banner'
+                         'title'
+                         'box';
+}
+section:nth-child(1) {
+    grid-area: banner;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-self: center;
+    width: 80%;
+    border: 1px solid #c6cdac;
+    background-color: #E1ECC8;
+    border-radius: 1.5rem;
+    height: 12rem;
+    box-shadow: inset 5px 5px 20px 5px #c6cdac;
+}
+section:nth-child(2) {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    width: auto;
+    justify-self: center;
+}
+section:nth-child(3) {
+    grid-area: box;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+    row-gap: 2rem;
+    justify-items: center;
+}
+.box {
+    background-color: transparent;
+    perspective: 1000px;
+    width: 20rem;
+    height: 18rem;    
+}
+@media (max-width: 350px) {
+    section:nth-child(1) {
+        width: 80%;
+        height: 8rem;
+        margin-right: 1rem;
+    }
+    .backflipbox p {
+        font-size: 0.7rem;
+    }
+    section:nth-child(2) {
+        font-size: 1rem;
+        margin-right: 1rem;
+    }
+    figure > span {
+        font-size: 2rem;
+        bottom: 3rem;
+    }
+    #box1, #box2, #box3 {
+        width: 60%;
+        height: 12rem;
+        margin-right: 1rem;
+    }
+    section {
+        width: 50%;
+    }
+    img:nth-child(1) {
+        width: 15rem;
+        height: 3.75rem;
+    }
+    section:nth-child(1) h1 {
+        text-align: left;
+        font-size: 0.6rem;
+    }
+    section:nth-child(1) p {
+        padding: 0 0.5rem 0.5rem 0.5rem;
+        text-align: justify;
+        font-size: 0.35rem;
+    }
+}
+@media (max-width: 768px) and (min-width: 350px) {
+    .box {
+        width: 70%;
+        height: 18rem;
+    }
+    section:nth-child(2) {
+        font-size: 1.5rem;
+    }
+    figure > span {
+        font-size: 2.5rem;
+        bottom: 3.5rem;
+    }
+    img:nth-child(1) {
+        width: 15rem;
+        height: 3.75rem;
+    }
+    section:nth-child(1) h1 {
+        text-align: left;
+        font-size: 0.8rem;
+    }
+    section:nth-child(1) p {
+        text-align: justify;
+        font-size: 0.55rem;
+    }
+}
+@media (min-width: 768px) and (max-width: 1250px) {
+    section:nth-child(1) h1 {
+        text-align: left;
+        font-size: 1rem;
+    }
+    section:nth-child(1) p {
+        text-align: justify;
+        font-size: 0.75rem;
+    }
+}
+.flipbox {
+    border: 0.1rem solid rgba(0, 0, 0, 0.145);
+    border-radius: 1.5rem;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.box:hover .flipbox {
+    transform: rotateY(180deg);
+}
+.frontflipbox, .backflipbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.frontflipbox figure {
+    width: 100%;
+    height: 100%;
+}
+.frontflipbox img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 1.5rem;
+}
+span {
+    position: relative;
+    bottom: 4rem;
+    font-size: 3rem;
+    color: #F8F6F4;
+}
+.backflipbox {
+    border-radius: 1.5rem;
+    background-color: #227c702e;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    text-align: justify;
+}
+.backflipbox h1, .backflipbox p {
+    padding: 1rem;
+}
+.backflipbox h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+footer {
+    margin-top: 2rem;
+    background-color: #A0C49D;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    align-items: center;
+    height: 3rem;
+}
+#image {
+    margin-left: 1rem;
+    grid-area: 1 / 2 / 1 / 2;
+    width: 2rem;
+    height: 2rem;
+}
+footer > p {
+    justify-self: end;
+    margin-right: 1rem;
+}
+section:nth-child(1) h1 {
+    padding: 1rem;
+    text-align: left;
+}
+section:nth-child(1) p {
+    padding: 0.5rem 1rem 1rem 1rem;
+    text-align: justify;
+}
